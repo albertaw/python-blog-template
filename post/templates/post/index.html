@@ -1,1 +1,13 @@
-<h1>This is the post index page</h1>
+<h1>All Posts</h1>
+{% if posts %}
+<ul>
+    {% for post in posts %}
+        <li>
+            <h4>{{ post.username }}</h4>
+             <p>{{  post.created_at }}</p>
+            <p>{{ post.content }}</p>
+
+        </li>
+    {% endfor %}
+</ul>
+{%  endif %}
