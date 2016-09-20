@@ -2,3 +2,22 @@ ul {
     padding: 0;
     list-style-type: none;
 }
+
+.menu {
+    height: 4em;
+    line-height: 4em;
+    border: 1px solid black;
+    background: #222;
+}
+
+.menu ul {
+    margin: 0;
+}
+.menu ul li {
+    display: inline-block;
+}
+
+.menu a {
+    color: #fff;
+}
+

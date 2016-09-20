@@ -18,7 +18,7 @@ def post(request, post_id):
 def users(request):
 	users = User.objects.all()
 	context = {'users': users}
-	return render(request, 'post/users.html', context)
+	return render(request, 'post/users.html')
 
 def user(request, username):
 	# get the user object that matches username
@@ -26,5 +26,7 @@ def user(request, username):
 	# get the posts for the user
 	# Post.objects.filter(user__username=username)
 	posts = user.post_set.all()
-	context = {'user': user, 'posts': posts}
-	return render(request, 'post/user.html', context)
+	# user object assigned to 'profile' to avoid conflicts with the user variable
+	# for the logged in user
+	context = {'profile': user, 'posts': posts}
+	return render(request, 'post/profile.html', context)
