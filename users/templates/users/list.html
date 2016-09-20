@@ -14,7 +14,7 @@
              will be appended to the end of the url.
             https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#url
         {% endcomment %}
-        <a href="{% url 'post:user' user.username %}"><h4>{{ user.username }}</h4></a>
+        <a href="{% url 'users:user' user.username %}"><h4>{{ user.username }}</h4></a>
     </li>
     {% endfor %}
 </ul>

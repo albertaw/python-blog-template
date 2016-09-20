@@ -6,8 +6,8 @@
 <ul>
     {% for post in posts %}
         <li>
-            <h4><a href="{% url 'post:user' post.user.username %}">{{ post.user.username }}</a></h4>
-             <p>{{  post.created_at }}</p>
+            <h4><a href="{% url 'users:user' post.user.username %}">{{ post.user.username }}</a></h4>
+            <p>{{ post.created_at }}</p>
             <p>{{ post.content }}</p>
 
         </li>

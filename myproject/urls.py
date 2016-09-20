@@ -20,8 +20,9 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include('post.urls'), name="posts"),
-    url(r'^accounts/', include('registration.backends.simple.urls'), name="accounts"),
+    url(r'^posts/', include('post.urls')),
+    url(r'^users/', include('users.urls')),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^$', RedirectView.as_view(url="/posts"))
 
 ]
