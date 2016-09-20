@@ -1,14 +1,21 @@
+{% extends "post/base.html" %}
+
+{% block content %}
 <h2>Users</h2>
 
 <ul>
    {%  for user in users %}
     <li>
-        <!--<a href="/posts/u/{{ user.username }}"><h4>{{ user.username }}</h4></a>-->
-        <!-- { url 'app_namespace:url_name' args }
+        {% comment %}
+        less dry way of making links:
+        <a href="/posts/u/{{ user.username }}"><h4>{{ user.username }}</h4></a>
+        {% url 'app_namespace:url_name' args %}
             where view_name is the name set in the url and args is the values that
              will be appended to the end of the url.
-            https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#url -->
+            https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#url
+        {% endcomment %}
         <a href="{% url 'post:user' user.username %}"><h4>{{ user.username }}</h4></a>
     </li>
     {% endfor %}
 </ul>
+{% endblock %}
