@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+
 
 urlpatterns = [
-	url(r'^post/', include('post.urls')),
-  url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^posts/', include('post.urls'), name="posts"),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^$', RedirectView.as_view(url="/posts"))
+
 ]

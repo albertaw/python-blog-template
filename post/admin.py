@@ -4,7 +4,7 @@ from .models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    fields = ['username', 'content']
-    list_display = ['username', 'created_at']
+    fields = ['user', 'content']
+    list_display = ['user', 'created_at']
 
 admin.site.register(Post, PostAdmin)

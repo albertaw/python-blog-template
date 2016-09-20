@@ -1,0 +1,13 @@
+<h2>{{ user.username }}</h2>
+{% if posts %}
+<ul>
+    {% for post in posts %}
+    <li>
+        <p>{{ post.created_at }}</p>
+        <p>{{ post.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No posts yet</p>
+{% endif %}
