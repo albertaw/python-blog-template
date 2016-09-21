@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post.apps.PostConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ TEMPLATES = [
             './auth/templates',
             './post/templates',
             './users/templates',
+            './dashboard/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

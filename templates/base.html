@@ -16,7 +16,7 @@
                     <li><a class="btn btn-primary">create post</a></li>
                     {% if user.is_superuser %}<li><a href="/admin">admin</a></li>{% endif %}
                     <li><a href="{% url 'users:user' user.username %}">profile</a></li>
-                    <li><a>settings</a></li>
+                    <li><a href="{% url 'dashboard:index' %}">settings</a></li>
                     <li><a href="{% url 'auth:logout' %}">logout</a></li>
                 {% else %}
                     <li><a href="{% url 'auth:login' %}">login</a></li>

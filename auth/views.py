@@ -10,7 +10,7 @@ def login_user(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/posts/')
+            return redirect('/dashboard/')
     else:
         #context = {'error': 'Incorrect username password combination'}
         #return render(request, 'auth/login.html', context)
