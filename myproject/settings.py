@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post.apps.PostConfig',
     'users.apps.UsersConfig',
+    'dashboard'
+
 
 ]
 
@@ -62,7 +64,6 @@ TEMPLATES = [
             './auth/templates',
             './post/templates',
             './users/templates',
-            './dashboard/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
