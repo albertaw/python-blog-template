@@ -58,6 +58,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             './templates',
+            './auth/templates',
             './post/templates',
             './users/templates',
         ],

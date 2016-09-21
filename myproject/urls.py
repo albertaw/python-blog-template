@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^posts/', include('post.urls')),
     url(r'^users/', include('users.urls')),
+    url(r'^auth/', include('auth.urls')),
+    # find out if I can add patterns to this url
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^$', RedirectView.as_view(url="/posts"))
 
