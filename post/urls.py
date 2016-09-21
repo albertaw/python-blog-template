@@ -10,4 +10,7 @@ urlpatterns = [
 
 	# /posts/1
 	url(r'^(?P<post_id>[0-9]+)/$', views.post, name='post'),
+
+	# /posts/new
+	url(r'^new/$', views.create_post, name="new"),
 ]
