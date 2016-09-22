@@ -16,15 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic.base import RedirectView
-
+import post, users, dashboard, authentication
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include('post.urls')),
-    url(r'^users/', include('users.urls')),
-    url(r'^auth/', include('authentication.urls')),
+    url(r'^posts/', include(post.urls)),
+    url(r'^users/', include(users.urls)),
+    url(r'^auth/', include(authentication.urls)),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^dashboard/', include('dashboard.urls')),
+    url(r'^dashboard/', include(dashboard.urls)),
     url(r'^$', RedirectView.as_view(url="/posts"))
 
 ]
