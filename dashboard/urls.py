@@ -5,7 +5,8 @@ app_name = 'dashboard'
 
 urlpatterns = [
     # /dashboard
-	url(r'^$', views.index, name="index"),
+	url(r'^$', views.update_settings, name="index"),
     # /dashboard/update
-    url(r'^update/$', views.update_user, name="update")
+    # url(r'^update/$', views.update_user, name="update")
+    url(r'^update/$', views.update_settings, name="update")
 ]

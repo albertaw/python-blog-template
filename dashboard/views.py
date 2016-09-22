@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
+from forms import DashboardForm
 from django.contrib.auth.models import User
 
 def index(request):
     if request.user.is_authenticated():
-        return render(request, 'dashboard/index.html')
+        return render(request, 'dashboard/form.html')
     else:
         return redirect('/posts/')
 
-
+'''
 def update_user(request):
     user = request.user
     username = request.POST['username'].strip()
@@ -39,30 +40,18 @@ def update_user(request):
     user.save()
     context = {'message': 'account updated'}
     return render(request, 'dashboard/index.html', context)
+'''
 
-'''
-def update_user(request):
-    user = request.user
-    username = request.POST['username']
-    email = request.POST['email']
-    old_password = request.POST['old-password']
-    new_password = request.POST['new-password']
-    new_password2 = request.POST['new-password2']
-    # must enter valid password to update account
-    if old_password == user.password:
-        user.username = username
-        if new_password & (new_password == new_password2):
-            user.set_password(new_password)
-        else:
-            # send error message that passwords do not match
-            context = {'message': 'passwords not a match'}
-            return render(request, 'dashboard/index.html', context)
-        # update the account
-        user.save()
-        context = {'message': 'account updated'}
-        return render(request, 'dashboard/index.html', context)
+# this is handling GET and POST requests
+def update_settings(request):
+    if request.method == 'POST':
+        form = DashboardForm(request.POST)
+        if form.is_valid():
+            user = request.user
+            user.username=form.cleaned_data['username']
+            user.email=form.cleaned_data['email']
+            user.save()
+            return redirect('/dashboard')
     else:
-        # send error message because passwords don't match
-        context = {'message': 'old password not valid'}
-        return render(request, 'dashboard/index.html')
-'''
+        form = DashboardForm()
+    return render(request, 'dashboard/form.html', {'form':form})
