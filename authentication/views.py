@@ -28,7 +28,7 @@ def login_user(request):
             return redirect('/dashboard/')
     else:
         form = LoginForm()
-    return render(request, 'auth/login.html', {'form': form})
+    return render(request, 'authentication/login.html', {'form': form})
 
 
 def logout_user(request):

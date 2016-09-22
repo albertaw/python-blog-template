@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post.apps.PostConfig',
-    'users.apps.UsersConfig',
+    'authentication',
+    'post',
+    'users',
     'dashboard',
 
 ]
@@ -60,9 +61,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             './templates',
-            './auth/templates',
-            './post/templates',
-            './users/templates',
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
