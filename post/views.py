@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import Post
-from forms.views import PostForm
+from .forms import PostForm
 
 def index(request):
 	posts = Post.objects.order_by('-created_at')
@@ -31,5 +31,5 @@ def create_post(request):
 		form = PostForm()
 
 	# show the form
-	return render(request, 'forms/post.html', {'form': form})
+	return render(request, 'post/create_post.html', {'form': form})
 
