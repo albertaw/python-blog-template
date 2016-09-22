@@ -2,10 +2,18 @@
 
 {% block content %}
 <h2>Login</h2>
-<form action="/auth/" method="POST">
+<form action="/auth/" method="POST" class="col-md-6">
     {% csrf_token %}
-    <input type="text" placeholder="username" name="username">
-    <input type="password" placeholder="password" name="password">
-    <input type="submit" value="submit" class="btn btn-primary">
+    <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" placeholder="username" name="username" class="form-control" id="username">
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" placeholder="password" name="password" class="form-control" id="password">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="submit" class="btn btn-primary">
+    </div>
 </form>
 {% endblock %}
