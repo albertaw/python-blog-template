@@ -4,6 +4,7 @@
 <h2>Login</h2>
 <form action="/auth/" method="POST" class="col-md-6">
     {% csrf_token %}
+    {{ form.errors }}
     <div class="form-group">
         <label for="">Username</label>
         <input type="text" placeholder="username" name="username" class="form-control" id="username">
