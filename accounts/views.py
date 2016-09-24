@@ -6,7 +6,7 @@ from django.views import View
 class Login(View):
     def get(self, request):
         form = LoginForm()
-        return render(request, 'authentication/login.html', {'form': form})
+        return render(request, 'accounts/login.html', {'form': form})
 
     def post(self, request):
         form = LoginForm(request.POST)
@@ -14,7 +14,7 @@ class Login(View):
             user = form.cleaned_data['user']
             login(request, user)
             return redirect('/dashboard/')
-        return render(request, 'authentication/login.html', {'form': form})
+        return render(request, 'accounts/login.html', {'form': form})
 
 # https://docs.djangoproject.com/en/1.10/topics/auth/default/#how-to-log-a-user-in
 '''
