@@ -20,9 +20,9 @@ import post, users, dashboard, authentication
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include(post.urls)),
-    url(r'^users/', include(users.urls)),
-    url(r'^auth/', include(authentication.urls)),
+    url(r'^posts/', include('post.urls')),
+    url(r'^users/', include('users.urls')),
+    url(r'^auth/', include('accounts.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^dashboard/', include(dashboard.urls)),
     url(r'^$', RedirectView.as_view(url="/posts"))

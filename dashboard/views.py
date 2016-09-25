@@ -1,6 +1,29 @@
 from django.shortcuts import render, redirect
 from forms import DashboardForm
 from django.contrib.auth.models import User
+from django.views import View
+
+
+class Dashboard(View):
+
+    def get(self, request):
+        form = DashboardForm()
+        return render(request, 'dashboard/form.html', {'form': form})
+
+    def post(self, request):
+        form = DashboardForm(request.POST)
+        if form.is_valid():
+            # form.update(request.user)
+            user = request.user
+            if form.has_changed():
+                if form.cleaned_data['username']:
+                    user.username = form.validate_username(user)
+                if form.cleaned_data['email']:
+                    user.email = form.cleaned_data['email']
+                user.save()
+            return redirect('/dashboard')
+        return render(request, 'dashboard/form.html', {'form': form})
+
 
 def index(request):
     if request.user.is_authenticated():

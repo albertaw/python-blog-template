@@ -12,5 +12,5 @@ urlpatterns = [
 	url(r'^(?P<post_id>[0-9]+)/$', views.post, name='post'),
 
 	# /posts/new
-	url(r'^new/$', views.create_post, name="new"),
+	url(r'^new/$', views.CreatePost.as_view(), name="new"),
 ]

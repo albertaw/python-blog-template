@@ -2,10 +2,12 @@
 
 {% block content %}
     <h2>Hello {{ user.username }}</h2>
+    {{ form.errors }}
     {# https://docs.djangoproject.com/en/1.10/topics/forms/#rendering-fields-manually #}
-    <form action="/dashboard/update/" method="POST" class="form-horizontal col-md-6">
+    <form action="/dashboard/" method="POST" class="form-horizontal col-md-6">
         {% csrf_token %}
         <div class="form-group">
+
             <label for="username" class="col-sm-3">Username</label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" name="username" id="username" value="{{ user.username }}">

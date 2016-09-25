@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <h1 class="thin">Volantio blog</h1>
+{% endblock %}
 {% block content %}
-<h1>All Posts</h1>
-{% if posts %}
-<ul>
-    {% for post in posts %}
-        <li>
-            <h4><a href="{% url 'users:user' post.user.username %}">{{ post.user.username }}</a></h4>
-            <p>{{ post.created_at }}</p>
-            <p>{{ post.content }}</p>
+	<section class="section light-theme">
+		<div class="container">
+			<div class="col-md-6 col-md-offset-3">
+                {% if posts %}
+                <ul class="post-list">
+                    {% for post in posts %}
+                        <li>
+                            <h3><a href="{% url 'users:user' post.user.username %}" class="post-title">{{ post.user.username }}</a></h3>
+                            <h5 class="post-meta">{{ post.created_at }}</h5>
+                            <p class="post-content">{{ post.content }}</p>
 
-        </li>
-    {% endfor %}
-</ul>
-{%  endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {%  endif %}
+			</div>
+		</div>
+	</section>
 {%  endblock %}

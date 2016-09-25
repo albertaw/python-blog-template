@@ -3,33 +3,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}Posting site{% endblock %}</title>
+    <title>{% block title %}Volantio Blog{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'cerebro.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <div id="menu" class="menu">
-        <div class="container">
-            <a href="{% url 'post:index' %}" class="navbar-brand">Home</a>
-            <ul class="pull-right">
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'post:new' %}" class="btn btn-primary">create post</a></li>
-                    {% if user.is_superuser %}<li><a href="/admin">admin</a></li>{% endif %}
-                    <li><a href="{% url 'users:user' user.username %}">profile</a></li>
-                    <li><a href="{% url 'dashboard:index' %}">settings</a></li>
-                    <li><a href="{% url 'auth:logout' %}">logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'auth:login' %}">login</a></li>
-                    {# I need to use a url tag here #}
-                    <li><a href="/accounts/register" class="btn btn-primary">signup</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
-    <div id="content">
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
-    </div>
+
+<!--
+	END SITE WRAPPER
+============================================= -->
+
+<div class="hero-wrapper">
+    {% include 'menu.html' %}
+    <!-- ==============================
+		HEADER SECTION
+	=================================== -->
+	<section class="page-header text-center bg dark-theme purplin-bg">
+		<div class="container">
+			<div class="col-xs-12">
+                {% block header %}{% endblock %}
+			</div>
+		</div>
+	</section><!-- END HOME -->
+	<!--
+	ADD OTHER SECTIONS BELOW HERE
+	======================================== -->
+    {% block content %}{% endblock %}
+</div>
+
 </body>
 </html>
