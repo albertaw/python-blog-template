@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
 	user = models.ForeignKey(User)
-	content = models.TextField(max_length=140)
+	title = models.TextField(max_length=140, default='title')
+	content = models.TextField(max_length=500)
 	created_at = models.DateTimeField(auto_now=True)
 
 	def __repr__(self):

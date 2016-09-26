@@ -16,7 +16,7 @@ class CreatePost(View):
 			# check whether it's valid:
 			if form.is_valid():
 				# process the data in form.cleaned_data as required
-				post = Post(user=request.user, content=form.cleaned_data['content'])
+				post = Post(user=request.user, title=form.cleaned_data['title'], content=form.cleaned_data['content'])
 				post.save()
 				# redirect to a new URL:
 				return redirect('/posts/' + str(post.id))

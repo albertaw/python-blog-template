@@ -6,4 +6,5 @@ class PostForm(forms.Form):
     # https://docs.djangoproject.com/en/1.10/ref/forms/widgets/
     # username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     # email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+    title = forms.CharField()
     content = forms.CharField(widget=forms.Textarea())

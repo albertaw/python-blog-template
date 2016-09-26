@@ -15,6 +15,7 @@
                 <ul class="post-list">
                     {% for post in posts %}
                         <li>
+                            <h3>{{ post.title }}</h3>
                             <h5 class="post-meta">{{ post.created_at }}</h5>
                             <p class="post-content">{{ post.content }}</p>
 
