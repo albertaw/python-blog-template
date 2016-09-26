@@ -42,3 +42,7 @@ h1 {
 .button-default {
     text-transform: lowercase;
 }
+
+.login .container {
+    margin-top: 3em;
+}
