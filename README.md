@@ -42,13 +42,18 @@ Then in browser type: http://127.0.0.1:8000
 
 ### Windows
 
-## Project Architecture / Directory Structure
-src - Main project folder
-src/myproject - the python package for the project
-src/myproject/__init__.py - An empty file that tells Python that this directory should be considered a Python package.
-src/myproject/setings.py - configuration for Django project, module level variables
-
-
 
 ## API
 
+GET /posts
+GET /posts/:post_id
+POST /posts/new
+GET /users
+GET /users/:user_id
+GET /auth/
+POST /auth/
+GET /auth/logout
+POST /auth/logout
+GET /accounts/register
+GET /dashboard
+POST /dashboard

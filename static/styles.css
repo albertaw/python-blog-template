@@ -26,3 +26,7 @@ h1 {
 .form {
     display:block;
 }
+
+.button {
+    transition: none 0s;
+}
