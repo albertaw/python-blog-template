@@ -5,7 +5,7 @@ app_name = 'users'
 
 urlpatterns = [
     # /users
-	url(r'^$', views.users),
+	url(r'^$', views.users, name='users'),
 
 	# /users/jane
 	# using name groups for the url so that I can pass route parameters as keyword

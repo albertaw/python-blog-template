@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic.base import RedirectView
-import post, users, dashboard, authentication
+# import post, users, dashboard, authentication
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
