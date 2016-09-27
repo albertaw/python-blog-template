@@ -1,59 +1,66 @@
 
-## Installation / Setup
-Download code from github
+## Installation (Mac)
 
-### Mac
+#### I. Download code from github  
+```bash
+git clone git@github.com:albertaw/python-blog-template.git
+```
+cd into the directory python-blog-template
 
-__Install python__
-Check for Python: ==============
-Download: [https://www.python.org/downloads/]
-This project uses Python 2
-Confirm installation: `python --version`
+#### II. Install python
+This project uses Python 2.7.8.  Check that you have Python with the command
+`python --version`.  If not download python here: [www.python.org/downloads]
+Confirm the installation by entering the command `python --version`.
 
-__Install Django__
-Check for Django: =================
-?Install pip: [https://pip.pypa.io/en/latest/installing/#install-pip]
-Install virtualenv. virtualenv creates an isolated python environment 
-where your project's dependencies will be contained. This is preferred
- to installing packages in the global site-packages directory.
- 
-`pip install virtualenv`
-
-From a terminal window enter the command:
-`sudo pip install Django`
-This project uses Django 1.10.  If you need to upgrade enter the 
-command===========
-Confirm installation
-`bash
+### III. Install Django
+This project users Django 1.10.1.  Check that you have Django by entering the
+following commands in the terminal:
+```bash
 python
 >>> import django
 >>> django.get_version()
-`
-### Running locally
-In myproject/settings.py set TIME_ZONE to your time zone
+```
+
+If you you do not have Django installed you can download it using pip.
+To upgrade pip type the command: 
+```bash
+pip install -U pip
+```
+If you need to get pip run the following commands: 
+```bash
+python get-pip.py
+```
+Next you can install django with:
+```bash
+sudo pip install Django
+```
+
+#### IV. Start the app
+In myproject/settings.py set TIME_ZONE to your time zone.
 Create the tables for the database that the installed apps use: 
-`python manage.py migrate`
-
-To run server, change into the directory where the manage.py file lives
+```bash
+python manage.py migrate
+```
+To start the server, change into the directory where the manage.py file lives
 and in your terminal type the command:
-`python manage.py runserver`
-Then in browser type: http://127.0.0.1:8000
-
-
-### Windows
+```bash
+python manage.py runserver
+```
+Then in your browser go to: [127.0.0.1:8000]
 
 
 ## API
 
-GET /posts
-GET /posts/:post_id
-POST /posts/new
-GET /users
-GET /users/:user_id
-GET /auth/
-POST /auth/
-GET /auth/logout
-POST /auth/logout
-GET /accounts/register
-GET /dashboard
-POST /dashboard
+GET /posts  
+GET /posts/:post_id  
+POST /posts/new  
+GET /users  
+GET /users/:user_id  
+GET /auth/  
+POST /auth/  
+GET /auth/logout  
+POST /auth/logout  
+GET /accounts/register  
+GET /dashboard  
+POST /dashboard  
+
