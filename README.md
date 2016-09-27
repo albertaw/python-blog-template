@@ -9,7 +9,7 @@ cd into the directory python-blog-template
 
 #### II. Install python
 This project uses Python 2.7.8.  Check that you have Python with the command
-`python --version`.  If not download python here: [www.python.org/downloads]
+`python --version`.  If not download python here: www.python.org/downloads
 Confirm the installation by entering the command `python --version`.
 
 ### III. Install Django
@@ -46,21 +46,47 @@ and in your terminal type the command:
 ```bash
 python manage.py runserver
 ```
-Then in your browser go to: [127.0.0.1:8000]
+Then in your browser go to: 127.0.0.1:8000
 
 
 ## API
 
 GET /posts  
+returns all posts
+
 GET /posts/:post_id  
+returns a post with the id post_id
+
+GET /posts/new  
+returns the create new post page
+
 POST /posts/new  
+creates a new post
+
 GET /users  
+returns all users
+
 GET /users/:user_id  
+returns the user with username user_id
+
 GET /auth/  
+returns the login page
+
 POST /auth/  
+logs in the user
+
 GET /auth/logout  
+returns the logout page
+
 POST /auth/logout  
+logs out the user
+
 GET /accounts/register  
+returns the registration page
+
 GET /dashboard  
+returns the dashboard page
+
 POST /dashboard  
+updates the user information
 
