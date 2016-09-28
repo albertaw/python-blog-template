@@ -26,7 +26,8 @@ SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+# You must set settings.ALLOWED_HOSTS if DEBUG is False.
+#ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
 
 
 # Application definition
@@ -102,8 +103,6 @@ DATABASES = {
 }
 
 # DATABASES['default'] = dj_database_url.config()
-
-# ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
