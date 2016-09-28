@@ -24,11 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # You must set settings.ALLOWED_HOSTS if DEBUG is False.
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+     'heroku-postgres-68f0d10d.herokuapp.com'
+ ]
 
 
 # Application definition
