@@ -21,7 +21,6 @@ numpy==1.10.1
 pathspec==0.3.3
 psycopg2==2.6.2
 pyasn1==0.1.7
-pymongo==3.0rc1
 python-dateutil==2.4.2
 PyYAML==3.11
 requests==2.6.2
