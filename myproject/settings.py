@@ -24,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # You must set settings.ALLOWED_HOSTS if DEBUG is False.
-#ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
 
 
 # Application definition
@@ -136,14 +137,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
 # https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [
-    "/Users/Alberta/Documents/sandbox/python/myproject/static",
-]
+# STATICFILES_DIRS = [
+#    "/Users/Alberta/Documents/sandbox/python/myproject/static",
+# ]
 
