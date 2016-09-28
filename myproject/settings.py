@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -81,16 +81,29 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9kfqldrkfaq8a',
+        'USER': 'tfbyeuahrtvobp',
+        'PASSWORD': 'l4VlXWaoKDoghoixBhmhWB1_kI',
+        'HOST': 'ec2-54-235-125-172.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
 
-ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
+# DATABASES['default'] = dj_database_url.config()
+
+# ALLOWED_HOSTS = 'heroku-postgres-68f0d10d.herokuapp.com'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -134,3 +147,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     "/Users/Alberta/Documents/sandbox/python/myproject/static",
 ]
+
