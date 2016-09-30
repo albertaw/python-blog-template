@@ -2,37 +2,45 @@
 ## Installation (Mac)
 
 #### I. Download code from github  
+
 ```bash
 git clone git@github.com:albertaw/python-blog-template.git
 ```
-cd into the directory python-blog-template
+
+Change into the directory python-blog-template
 
 #### II. Install python
 This project uses Python 2.7.8.  Check that you have Python with the command
 `python --version`.  If not download python here: www.python.org/downloads
 Confirm the installation by entering the command `python --version`.
 
-### III. Install Django
-This project users Django 1.10.1.  Check that you have Django by entering the
-following commands in the terminal:
-```bash
-python
->>> import django
->>> django.get_version()
-```
 
-If you you do not have Django installed you can download it using pip.
-To upgrade pip type the command: 
-```bash
-pip install -U pip
-```
-If you need to get pip run the following commands: 
+#### Set up a virtual environment
+You can use virtualenv to keep your project dependencies isolated. You can
+download virtualenv with pip. If you need to get pip run the following commands: 
 ```bash
 python get-pip.py
 ```
-Next you can install django with:
+
+Install virtualenv:
 ```bash
-sudo pip install Django
+pip instal virtualenv
+```
+
+Create the virtual environment:
+```bash
+virtualenv venv
+```
+
+Activate you virtual environment:
+```bash
+source venv/bin/activate
+```
+
+
+### III. Install project dependencies
+```bash
+pip install -r requirements.txt
 ```
 
 #### IV. Start the app

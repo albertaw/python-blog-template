@@ -24,14 +24,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # You must set settings.ALLOWED_HOSTS if DEBUG is False.
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'localhost',
-    'heroku-postgres-68f0d10d.herokuapp.com',
-    'alberta.herokuapp.com'
+    #'heroku-postgres-68f0d10d.herokuapp.com',
+    'alberta.herokuapp.com',
+
  ]
 
 
@@ -87,14 +89,6 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
 
 DATABASES = {
     'default': {
@@ -146,11 +140,15 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# where static files will be served from when deployed
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+# what gets used in template files to link to static resources
 
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
+# Extra places for collectstatic to find static files not tied to a specific app.
 # https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-STATICFILES_DIRS
 
 STATICFILES_DIRS = (
@@ -160,5 +158,5 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

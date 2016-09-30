@@ -1,3 +1,9 @@
 db.sqlite3
 *.pyc
 .idea
+.Python
+venv/
+bin/
+include/
+lib/
+pip-selfcheck.json
