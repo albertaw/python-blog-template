@@ -16,6 +16,7 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -24,10 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w@mc39pd7cb%h047&j^ossdos0rfqq#gq5esuc0@eafz*b+xs@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # You must set settings.ALLOWED_HOSTS if DEBUG is False.
-#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
@@ -68,7 +68,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            './templates',
+            os.path.join(PROJECT_ROOT, 'templates'),
 
         ],
         'APP_DIRS': True,
@@ -137,15 +137,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-# where static files will be served from when deployed by collectstatic. Should be empty.
+# Where static files will be served from when deployed by collectstatic.
+# run python manage.py collectstatic
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-# url to use in template files to link to static resources and to refer to static files
-# located in STATIC_ROOT
-
+# Url to use in template files to link to static resources and to refer to static files located in STATIC_ROOT
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files not tied to a specific app.
