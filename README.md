@@ -16,8 +16,9 @@ Confirm the installation by entering the command `python --version`.
 
 
 #### III. Set up a virtual environment
-You can use virtualenv to keep your project dependencies isolated. You can
-download virtualenv with pip. If you need to get pip run the following commands: 
+You can use virtualenv to keep your project dependencies isolated. More info here:
+[https://virtualenv.pypa.io/en/stable/userguide/]
+You can download virtualenv with pip. If you need to get pip run the following commands: 
 ```bash
 python get-pip.py
 ```

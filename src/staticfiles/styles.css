@@ -30,3 +30,7 @@ h1 {
 .button {
     transition: none 0s;
 }
+
+.post-content {
+    font-family: inherit;
+}
