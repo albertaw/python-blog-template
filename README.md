@@ -15,7 +15,7 @@ This project uses Python 2.7.8.  Check that you have Python with the command
 Confirm the installation by entering the command `python --version`.
 
 
-#### Set up a virtual environment
+#### III. Set up a virtual environment
 You can use virtualenv to keep your project dependencies isolated. You can
 download virtualenv with pip. If you need to get pip run the following commands: 
 ```bash
@@ -38,17 +38,20 @@ source venv/bin/activate
 ```
 
 
-### III. Install project dependencies
+#### IV. Install project dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-#### IV. Start the app
-In myproject/settings.py set TIME_ZONE to your time zone.
+
+#### V. Start the app
+
+In myproject/settings.py set TIME_ZONE to your time zone.  
 Create the tables for the database that the installed apps use: 
 ```bash
 python manage.py migrate
 ```
+
 To start the server, change into the directory where the manage.py file lives
 and in your terminal type the command:
 ```bash

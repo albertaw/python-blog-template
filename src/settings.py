@@ -140,11 +140,12 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# where static files will be served from when deployed
+# where static files will be served from when deployed by collectstatic. Should be empty.
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-# what gets used in template files to link to static resources
+# url to use in template files to link to static resources and to refer to static files
+# located in STATIC_ROOT
 
 STATIC_URL = '/static/'
 
