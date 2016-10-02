@@ -1,4 +1,3 @@
-
 ## Installation (Mac)
 
 #### I. Download code from github  
