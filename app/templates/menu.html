@@ -7,10 +7,13 @@
 		DESKTOP NAVIGATION
 		========================================= -->
 		<!-- BRANDING -->
-        <a href="{% url 'post:index' %}" class="nav-left anchor menu-logo">home</a>
+        <ul class="nav-left">
+            <li><a href="https://github.com/albertaw/python-blog-template" target="_blank" class="fa fa-2x fa-github"></a></li>
+            <li><a href="{% url 'post:index' %}" class="anchor menu-logo">home</a></li>
+        </ul>
+
 		<!-- MENU LINKS GO HERE -->
         <ul class="hidden-xs hidden-sm nav-right">
-            <li><a href="https://github.com/albertaw/python-blog-template" target="_blank" class="fa fa-lg fa-github"></a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'post:new' %}" class="button button-default button-sm button-blue">create post</a></li>
                 {% if user.is_superuser %}<li><a href="/admin">admin</a></li>{% endif %}
