@@ -13,7 +13,7 @@ class Login(View):
         if form.is_valid():
             user = form.cleaned_data['user']
             login(request, user)
-            return redirect('/dashboard/')
+            return redirect('/posts/new/')
         return render(request, 'accounts/login.html', {'form': form})
 
 # https://docs.djangoproject.com/en/1.10/topics/auth/default/#how-to-log-a-user-in

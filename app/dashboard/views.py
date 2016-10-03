@@ -12,8 +12,10 @@ class Dashboard(View):
 
     def post(self, request):
         form = DashboardForm(request.POST)
-        user = request.user
+
         if form.is_valid():
+            user = request.user
+            # only save the user if there is new form data
             if form.has_changed():
                 if form.cleaned_data['username']:
                     user.username = form.validate_username(user)
@@ -21,7 +23,8 @@ class Dashboard(View):
                     user.email = form.cleaned_data['email']
                 user.save()
             return redirect('/dashboard')
-        return render(request, 'dashboard/form.html', {'form': form, 'user': user})
+        else:
+            return render(request, 'dashboard/form.html', {'form': form})
 
 
 def index(request):

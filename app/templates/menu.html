@@ -17,7 +17,7 @@
             {% if user.is_authenticated %}
                 <li><a href="{% url 'post:new' %}" class="button button-default button-sm button-blue">create post</a></li>
                 <li><a href="{% url 'users:user' user.username %}">profile</a></li>
-                <li><a href="{% url 'dashboard:index' %}">settings</a></li>
+                {# comment <li><a href="{% url 'dashboard:index' %}">settings</a></li> #}
                 <li><a href="{% url 'auth:logout' %}">logout</a></li>
             {% else %}
                 <li><a href="{% url 'auth:login' %}">login</a></li>
@@ -46,7 +46,7 @@
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'post:new' %}" class="button button-default button-blue">create post</a></li>
                     <li><a href="{% url 'users:user' user.username %}">profile</a></li>
-                    <li><a href="{% url 'dashboard:index' %}">settings</a></li>
+                    {# comment <li><a href="{% url 'dashboard:index' %}">settings</a></li> #}
                     <li><a href="{% url 'auth:logout' %}">logout</a></li>
                 {% else %}
                     <li><a href="{% url 'auth:login' %}">login</a></li>

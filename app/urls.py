@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^users/', include('app.users.urls')),
     url(r'^auth/', include('app.accounts.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^dashboard/', include('app.dashboard.urls')),
+    # url(r'^dashboard/', include('app.dashboard.urls')),
     url(r'^$', RedirectView.as_view(url='/posts')),
 ]

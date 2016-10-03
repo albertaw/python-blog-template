@@ -18,16 +18,16 @@ class DashboardForm(forms.Form):
 
         new_username = self.cleaned_data['username']
         print new_username
-        if old_username == new_username:
+        #if old_username == new_username:
+        #    return old_username
+        #else:
+        # if the changed username is not the same check if it exists for another user
+        try:
+            User.objects.get(username=new_username)
+        except User.DoesNotExist:
+            return new_username
+        finally:
             return old_username
-        else:
-            # if the changed username is not the same check if it exists for another user
-            try:
-                User.objects.get(username=new_username)
-            except User.DoesNotExist:
-                return new_username
-            finally:
-                return old_username
 
 
 
