@@ -5,6 +5,13 @@ h1 {
     font-size: 5em;
 }
 
+a {
+    color: #6a3093;
+}
+
+a:hover, a:focus{
+    color: #a044ff;
+}
 .section {
     border-bottom: none;
 }

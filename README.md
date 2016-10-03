@@ -91,10 +91,3 @@ logs out the user
 
 GET /accounts/register  
 returns the registration page
-
-GET /dashboard  
-returns the dashboard page
-
-POST /dashboard  
-updates the user information
-
