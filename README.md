@@ -86,9 +86,6 @@ returns the login page
 POST /auth/  
 logs in the user
 
-GET /auth/logout  
-returns the logout page
-
 POST /auth/logout  
 logs out the user
 

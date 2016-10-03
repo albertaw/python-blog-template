@@ -11,7 +11,7 @@ class LoginForm(forms.Form):
 
         if 'username' in cleaned_data and 'password' in cleaned_data:
             user = authenticate(username=cleaned_data['username'], password=cleaned_data['password'])
-            if user == None:
+            if user is None:
                 raise forms.ValidationError('incorrect username/password')
             cleaned_data['user'] = user
             del cleaned_data['username']

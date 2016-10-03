@@ -844,8 +844,8 @@ elements absolutely */
 .toggle-input {
   display: none;
 }
-
-@media (max-width: 768px) {
+/* xs and sm screens */
+@media (max-width: 992px) {
   .menu-logo {
     font-size: 1.5em;
   }

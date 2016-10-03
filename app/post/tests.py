@@ -2,7 +2,7 @@ from django.test import TestCase
 import forms
 # Create your tests here.
 
-class Post(TestCase):
+class PostTest(TestCase):
 
     def test_should_make_form_valid_if_content(self):
         form = forms.PostForm({'title': 'test','content':'This is a test'})

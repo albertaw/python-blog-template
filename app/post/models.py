@@ -12,4 +12,4 @@ class Post(models.Model):
 	created_at = models.DateTimeField(auto_now=True)
 
 	def __repr__(self):
-		return "Post(%s, %s)" % (self.user.username, self.created_at)
+		return "Post({}, {})".format(self.user.username, self.created_at)

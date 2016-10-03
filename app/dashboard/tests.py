@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import forms
 
 
-class Dashboard(TestCase):
+class DashboardTest(TestCase):
 
     def test_should_make_form_valid_for_username(self):
         form = forms.DashboardForm({'username':'test', 'email': 'test@example.com'})

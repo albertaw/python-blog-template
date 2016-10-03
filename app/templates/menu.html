@@ -16,7 +16,6 @@
         <ul class="hidden-xs hidden-sm nav-right">
             {% if user.is_authenticated %}
                 <li><a href="{% url 'post:new' %}" class="button button-default button-sm button-blue">create post</a></li>
-                {% if user.is_superuser %}<li><a href="/admin">admin</a></li>{% endif %}
                 <li><a href="{% url 'users:user' user.username %}">profile</a></li>
                 <li><a href="{% url 'dashboard:index' %}">settings</a></li>
                 <li><a href="{% url 'auth:logout' %}">logout</a></li>
@@ -46,7 +45,6 @@
 			<ul>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'post:new' %}" class="button button-default button-blue">create post</a></li>
-                {% if user.is_superuser %}<li><a href="/admin">admin</a></li>{% endif %}
                     <li><a href="{% url 'users:user' user.username %}">profile</a></li>
                     <li><a href="{% url 'dashboard:index' %}">settings</a></li>
                     <li><a href="{% url 'auth:logout' %}">logout</a></li>
